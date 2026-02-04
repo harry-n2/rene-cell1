@@ -358,7 +358,5 @@ function drawRadarChart() {
 }
 
 function openLineProtocol() {
-    // Use the pattern-specific LINE message
-    const message = selectedPattern.lineMsg;
-    window.location.href = `https://line.me/R/oaMessage/${LINE_ID}/?${encodeURIComponent(message)}`;
+    window.location.href = 'https://lin.ee/WdYf2tq';
 }
