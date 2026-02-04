@@ -1,7 +1,7 @@
 :root {
     --gold-primary: #D4AF37;
     --gold-light: #F7E7CE;
-    --white-pearl: #FDFCF9;
+    --white-pearl: #F5EDE3;
     --black-text: #2C2C2C;
     --gray-text: #666666;
     --danger-red: #C84646;
@@ -20,7 +20,7 @@
 }
 
 body {
-    background-color: transparent;
+    background-color: #F0E8DC;
     font-family: var(--font-serif);
     color: var(--black-text);
     height: 100vh;
@@ -35,7 +35,7 @@ body {
     max-width: 480px;
     height: 100%;
     max-height: 900px;
-    background: #FFFFFF;
+    background: var(--white-pearl);
     position: relative;
     box-shadow: 0 4px 60px rgba(0, 0, 0, 0.4);
     border: 3px solid #888888;
@@ -73,7 +73,7 @@ body {
     pointer-events: none;
     transition: opacity 0.8s ease;
     padding: 2rem;
-    background: #FFFFFF;
+    background: radial-gradient(circle at top right, #FAF3E8, #F5EDE3);
     z-index: 1;
 }
 
