@@ -304,7 +304,7 @@ function animateResult() {
 
 function renderMetrics() {
     metricsList.innerHTML = '';
-    selectedPattern.metrics.forEach(m => {
+    selectedPattern.metrics.forEach((m, index) => {
         const li = document.createElement('li');
         let colorClass = "";
         let text = "";
@@ -324,6 +324,9 @@ function renderMetrics() {
             <span class="metric-name">${m.n}</span>
             <span class="metric-val ${colorClass}">${m.s}% (${text})</span>
         `;
+        if (index >= 3) {
+            li.classList.add('locked-item');
+        }
         metricsList.appendChild(li);
     });
 }

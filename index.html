@@ -89,44 +89,48 @@
                     </div>
                 </div>
 
-                <!-- Radar Chart -->
-                <div class="metrics-card fade-in-up delay-2">
+                <!-- Radar Chart (LOCKED) -->
+                <div class="metrics-card locked-section fade-in-up delay-2">
                     <h3>【肌バランス分析】</h3>
                     <div class="chart-container">
                         <canvas id="skinRadarChart"></canvas>
                     </div>
                     <p class="chart-caption">全体的にバリア機能が崩壊しています。</p>
+                    <div class="lock-overlay">
+                        <div class="lock-icon">🔒</div>
+                        <p class="lock-text">LINEで解析結果を解放</p>
+                    </div>
                 </div>
 
-                <!-- 12 Metrics Breakdown -->
+                <!-- 12 Metrics Breakdown (PARTIALLY LOCKED) -->
                 <div class="details-card fade-in-up delay-2">
                     <h3>【精密解析 12項目】</h3>
                     <ul class="metrics-list" id="metrics-list">
                         <!-- JS GENERATED ITEMS -->
                     </ul>
+                    <div class="locked-metrics-msg">
+                        <span>🔒 残り9項目の詳細はLINEで確認</span>
+                    </div>
                 </div>
 
-                <!-- Warning -->
-                <div class="future-simulation fade-in-up delay-3">
+                <!-- Warning (LOCKED) -->
+                <div class="future-simulation locked-section fade-in-up delay-3">
                     <h3 style="color:#C84646;">⚠ 警告コメント</h3>
-                    <p class="simulation-text">
-                        <strong>「現在の肌は、砂漠化の一歩手前です」</strong><br><br>
-                        深層メラニン（隠れジミ）の蓄積が限界を超えています。<br>
-                        このまま放置した場合、3年以内に<br>
-                        <strong>「修復不可能な濃いシミ」</strong>が顔全体に定着します。<br>
-                        <br>
-                        5年後の顔シミュレーションを見ますか？
-                    </p>
+                    <p class="simulation-text"></p>
+                    <div class="warning-fade-mask"></div>
+                    <div class="lock-overlay lock-overlay-bottom">
+                        <div class="lock-icon">🔒</div>
+                        <p class="lock-text">警告の全文はLINEで確認</p>
+                    </div>
                 </div>
 
                 <!-- Conversion -->
                 <div class="action-area fade-in-up delay-3">
-                    <p class="offer-limit">※処方箋の受取有効期限: <span id="timer">72:00:00</span></p>
+                    <p class="offer-limit">※診断データは72時間で消去されます</p>
                     <button id="line-connect-btn" class="cta-button line-color">
-                        <span class="btn-text">詳細な処方箋をLINEで受け取る</span>
+                        <span class="btn-text">解析結果の全貌と処方箋をLINEで受け取る</span>
                         <span class="sub-btn-text">エージェントへ救難信号を送る</span>
                     </button>
-                    <p class="share-trigger">同年代(40代)平均と比較する &gt;</p>
                 </div>
             </div>
         </section>
