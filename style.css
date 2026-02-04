@@ -403,15 +403,23 @@ body {
     overflow: hidden;
 }
 
+/* Radar chart: blur content directly */
+.metrics-card.locked-section h3,
+.metrics-card.locked-section .chart-container,
+.metrics-card.locked-section .chart-caption {
+    -webkit-filter: blur(10px);
+    filter: blur(10px);
+    pointer-events: none;
+    user-select: none;
+}
+
 .lock-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.3);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -424,11 +432,17 @@ body {
     top: auto;
     bottom: 0;
     height: 75%;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    background: transparent;
+    background: linear-gradient(to bottom, transparent 0%, rgba(255, 255, 255, 0.9) 40%, rgba(255, 255, 255, 0.95) 100%);
     justify-content: flex-end;
     padding-bottom: 1.5rem;
+}
+
+/* Warning: blur text directly */
+.future-simulation.locked-section .simulation-text {
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+    pointer-events: none;
+    user-select: none;
 }
 
 .warning-fade-mask {
@@ -467,9 +481,10 @@ body {
     margin-top: 0.5rem;
 }
 
-.metrics-list .locked-item {
-    filter: blur(6px);
-    -webkit-filter: blur(6px);
-    pointer-events: none;
-    user-select: none;
+/* Metrics: blur items 4-12 directly */
+ul.metrics-list li.locked-item {
+    -webkit-filter: blur(6px) !important;
+    filter: blur(6px) !important;
+    pointer-events: none !important;
+    user-select: none !important;
 }
