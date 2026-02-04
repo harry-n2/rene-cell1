@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ルネセル銀座 AI精密肌解析</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Noto+Serif+JP:wght@300;500;700&family=Zen+Old+Mincho:wght@400;600&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Section 1: Entrance -->
+        <section id="entrance" class="screen active">
+            <div class="bg-overlay"></div>
+            <div class="content-wrapper fade-in-up">
+                <p class="brand-text">AI Analysis</p>
+                <h1 class="main-title">
+                    <span class="block">皮膚の「真実」を</span>
+                    <span class="block">知る覚悟は</span>
+                    <span class="block highlight">ありますか？</span>
+                </h1>
+                <p class="sub-text">
+                    あなたの肌寿命、<br>
+                    細胞レベルで可視化します。
+                </p>
+                <button id="start-btn" class="cta-button primary">
+                    <span class="btn-text">解析を開始する</span>
+                    <span class="sub-btn-text">※結果は元には戻せません</span>
+                    <div class="shimmer"></div>
+                </button>
+            </div>
+        </section>
+
+        <!-- Section 2: Scanning (Multi-Angle) -->
+        <section id="scanning" class="screen">
+            <div class="scan-container">
+                <h2 class="step-title" id="step-title">STEP 1: 正面</h2>
+                <p class="step-desc" id="step-desc">顔全体を枠に合わせてください</p>
+
+                <div class="face-frame">
+                    <div class="scan-line" id="scan-line"></div>
+                    <img src="https://images.unsplash.com/photo-1596704017254-9b121068fb31?q=80&w=2070&auto=format&fit=crop"
+                        alt="Face Frame" class="scan-placeholder" id="preview-img">
+                </div>
+
+                <input type="file" accept="image/*" capture="user" id="camera-input" style="display: none;">
+
+                <div class="action-box">
+                    <button id="camera-btn" class="cta-button secondary">
+                        <span class="btn-text" id="camera-btn-text">カメラを起動</span>
+                        <span class="icon">📷</span>
+                    </button>
+                </div>
+
+                <div class="status-box hidden" id="status-box">
+                    <p id="scan-status-text" class="scan-text">Initializing...</p>
+                    <div class="progress-bar">
+                        <div id="progress-fill" class="progress-fill"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Result (12 Metrics) -->
+        <section id="result" class="screen">
+            <div class="content-wrapper scrollable">
+                <p class="result-header">ANALYSIS REPORT #8820</p>
+
+                <!-- Main Score -->
+                <div class="score-card fade-in-up delay-1">
+                    <p class="label">あなたの肌年齢</p>
+                    <div class="score-row">
+                        <span class="number" id="age-result">--</span>
+                        <span class="unit">歳</span>
+                        <span class="diff positive" id="age-diff-text"></span>
+                    </div>
+                    <div class="danger-level">
+                        <span class="danger-label">総合判定:</span>
+                        <span class="danger-grade" style="color:red;">緊急警戒域 (Rank S)</span>
+                    </div>
+                </div>
+
+                <!-- Radar Chart -->
+                <div class="metrics-card fade-in-up delay-2">
+                    <h3>【肌バランス分析】</h3>
+                    <div class="chart-container">
+                        <canvas id="skinRadarChart"></canvas>
+                    </div>
+                    <p class="chart-caption">全体的にバリア機能が崩壊しています。</p>
+                </div>
+
+                <!-- 12 Metrics Breakdown -->
+                <div class="details-card fade-in-up delay-2">
+                    <h3>【精密解析 12項目】</h3>
+                    <ul class="metrics-list" id="metrics-list">
+                        <!-- JS GENERATED ITEMS -->
+                    </ul>
+                </div>
+
+                <!-- Warning -->
+                <div class="future-simulation fade-in-up delay-3">
+                    <h3 style="color:#C84646;">⚠ 警告コメント</h3>
+                    <p class="simulation-text">
+                        <strong>「現在の肌は、砂漠化の一歩手前です」</strong><br><br>
+                        深層メラニン（隠れジミ）の蓄積が限界を超えています。<br>
+                        このまま放置した場合、3年以内に<br>
+                        <strong>「修復不可能な濃いシミ」</strong>が顔全体に定着します。<br>
+                        <br>
+                        5年後の顔シミュレーションを見ますか？
+                    </p>
+                </div>
+
+                <!-- Conversion -->
+                <div class="action-area fade-in-up delay-3">
+                    <p class="offer-limit">※処方箋の受取有効期限: <span id="timer">72:00:00</span></p>
+                    <button id="line-connect-btn" class="cta-button line-color">
+                        <span class="btn-text">詳細な処方箋をLINEで受け取る</span>
+                        <span class="sub-btn-text">院長へ救難信号を送る</span>
+                    </button>
+                    <p class="share-trigger">同年代(40代)平均と比較する &gt;</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
