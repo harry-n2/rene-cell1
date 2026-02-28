@@ -358,5 +358,5 @@ function drawRadarChart() {
 }
 
 function openLineProtocol() {
-    window.location.href = 'https://lin.ee/WdYf2tq';
+    window.location.href = 'https://drive.google.com/file/d/16-c4jAIqPUvDV0XX97SzzHE7uaO_MTVg/view?usp=sharing';
 }
